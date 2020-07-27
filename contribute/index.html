@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contribute - HyderJS Javascript Library</title>
+    <link rel="stylesheet" href="../assets/css/tailwind.css">
+    <link rel="icon" href="../assets/img/logo-sm.png">
+</head>
+<body>
+    <div id="app"></div>
+</body>
+    <script src="../../assets/js/hyder.min.js"></script>    
+    <script async defer src="https://buttons.github.io/buttons.js"></script>    
+    <script>
+        let dp = {
+                                                    type: "image",
+                                                    data: {
+                                                        src: "https://avatars.githubusercontent.com/u/52098098?s=300",
+                                                        className: "h-10 w-10 rounded-full mx-2",
+                                                        title: "vishwah13",
+                                                        alt: "git profile image"
+                                                    }
+                                                };
+        let blocks = [
+            {
+                type: "container",
+                data: {
+                    className: "flex flex-col items-start justify-center w-full py-20 px-6 lg:px-32",
+                    items: [
+                        {
+                            type: "text",
+                            data: {
+                                text: "HyderJS Contribution 💚",
+                                className: "text-xl font-bold text-left border-b-4 border-teal-400"
+                            }
+                        },
+                        {
+                            type: "list",
+                            data: {
+                                listType: "none",
+                                items: [
+                                    {
+                                        text: "<a href='#all'>Contributors</a>",
+                                        className: "hover:border-teal-500 border-b mb-2"
+                                    },
+                                    {
+                                        text: "<a href='#howto'>How to Contribute</a>",
+                                        className: "hover:border-teal-500 border-b mb-2"
+                                    },
+                                    {
+                                        text: "<a href='#support'>How to Support Us</a>",
+                                        className: "hover:border-teal-500 border-b mb-2"
+                                    },
+                                    {
+                                        text: "<a href='/'>Back to Home</a>",
+                                        className: "hover:border-teal-500 border-b mb-2"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                                        type: "image",
+                                        data: {                                            
+                                            alt: "HyderJS",
+                                            src: "../assets/img/logo.png",
+                                            style: {
+                                                width: "100%",
+                                                objectFit: "contain",
+                                                maxHeight: "250px",
+                                                padding: 0,
+                                                margin: 0
+                                            }
+                                        }
+                        },
+                        {
+                            type: "text",
+                            data: {
+                                text: "HyderJS",
+                                className: "font-black text-3xl text-center w-full",                                
+                            }
+                        },
+                        {
+                            type: "text",
+                            data: {
+                                id: "all",
+                                text: "Contributors 🚀",
+                                className: "text-xl font-bold text-left border-b-4 border-teal-400 mt-10"
+                            }
+                        },
+                        {
+                            type: "container",
+                            data: {                                
+                                arrange: "column",
+                                className: "lg:px-0 px-2 w-full flex items-start justify-center py-4 mt-3",
+                                items: [                                    
+                                    {
+                                                    type: "text",
+                                                    data: {                                                        
+                                                        className: "text-left py-2 lg:w-1/2",
+                                                        text: "Independent developers are around the world that each can contribute as much they can making this library more powerfull and making it easy to others building their own custom websites."
+                                                    }
+                                                },
+                                                {
+                                                    type: "text",
+                                                    data: {
+                                                        text: "Backers",
+                                                        className: "text-left font-bold text-md text-gray-600"
+                                                    }
+                                                },
+                                    {                                        
+                                        type: "container",
+                                        data: {
+                                            className: "flex items-start my-2",
+                                            items: [                                                
+                                                {
+                                                    type: "image",
+                                                    data: {
+                                                        src: "https://avatars.githubusercontent.com/u/41544971?s=300",
+                                                        className: "h-12 w-12 rounded-full mx-2",
+                                                        title: "imprakashraghu",
+                                                        alt: "git profile image"
+                                                    }
+                                                },
+                                                {
+                                                    type: "image",
+                                                    data: {
+                                                        src: "https://avatars.githubusercontent.com/u/52098098?s=300",
+                                                        className: "h-12 w-12 rounded-full mx-2",
+                                                        title: "vishwah13",
+                                                        alt: "git profile image"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                                    type: "text",
+                                                    data: {
+                                                        text: "Other Contributors",
+                                                        className: "text-left font-bold text-md text-gray-600 py-2"
+                                                    }
+                                    },
+                                    {
+                                        type: "container",
+                                        data: {
+                                            id: "contributors_place",
+                                            items: [
+                                                {
+                                                    ...dp,
+                                                    data: {
+                                                        ...dp.data,
+                                                        src: "https://avatars.githubusercontent.com/u/51748359?s=300",
+                                                        title: "balajiR"                                                       
+                                                    }
+                                                },
+                                                {
+                                                    ...dp,
+                                                    data: {
+                                                        ...dp.data,
+                                                        src: "https://avatars.githubusercontent.com/u/53446404?s=300",
+                                                        title: "younusesherif"                                                       
+                                                    }
+                                                }
+                                            ],
+                                            className: "text-xs text-gray-700"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            type: "text",
+                            data: {
+                                id: "howto",
+                                text: "How to Contribute 📌",
+                                className: "text-xl font-bold text-left border-b-4 border-teal-400 mt-10"
+                            }
+                        },
+                        {
+                            type: "container",
+                            data: {                                
+                                arrange: "column",
+                                className: "lg:px-0 px-2 w-full flex items-start justify-center py-4 mt-3",
+                                items: [                                    
+                                                {
+                                                    type: "text",
+                                                    data: {                                                        
+                                                        className: "text-left py-2 lg:w-1/2",
+                                                        text: "Sign In into your GitHub Account"
+                                                    }
+                                                },
+                                                {
+                                                    type: "text",
+                                                    data: {
+                                                        text: "If you don't have one <a class='hover:underline text-teal-500' href='https://github.com/join'>Create a Free Account Here</a>",
+                                                        className: "text-left font-bold text-sm text-gray-600"
+                                                    }
+                                                },                                    
+
+                                                {
+                                                    type: "text",
+                                                    data: {                                                        
+                                                        className: "text-left py-2 lg:w-1/2 mt-2",
+                                                        text: "Fork or Download the project"
+                                                    }
+                                                },
+                                                {
+                                                    type: "text",
+                                                    data: {
+                                                        text: '<a class="github-button" href="https://github.com/imprakashraghu/hyderjs/fork" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-icon="octicon-repo-forked" data-size="large" aria-label="Fork imprakashraghu/hyderjs on GitHub">Fork</a> <span class="mx-2">or</span> <a class="github-button" href="https://github.com/imprakashraghu/hyderjs/archive/master.zip" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-icon="octicon-download" data-size="large" aria-label="Download imprakashraghu/hyderjs on GitHub">Download</a>',
+                                                        className: "text-xs text-gray-700 my-2"
+                                                    }
+                                                },
+                                                {
+                                                    type: "text",
+                                                    data: {                                                        
+                                                        className: "text-left py-2 lg:w-1/2",
+                                                        text: "You can also clone download it from <a class='cursor-pointer text-teal-500 hover:underline'>GitHubProject</a>"
+                                                    }
+                                                },
+                                                {
+                                                    type: "text",
+                                                    data: {                                                        
+                                                        className: "text-left py-2 lg:w-1/2",
+                                                        text: "You can find the entire library file inside lib/ directory with regular and minified version with which you can fix bugs create new updates and more."
+                                                    }
+                                                },
+                                                {
+                                                    type: "text",
+                                                    data: {                                                        
+                                                        className: "text-left py-2 lg:w-1/2",
+                                                        text: "Create an Upstream to the repository and push the changes to you forked repo and create a pull request to the original repository for the changes to be validated."
+                                                    }
+                                                },
+                                                {
+                                                    type: "text",
+                                                    data: {                                                        
+                                                        className: "text-left py-2 lg:w-1/2",
+                                                        text: "You can find the detailed way to contribute at <a class='text-teal-500 hover:underline' href='https://www.dataschool.io/how-to-contribute-on-github/'>More Detail</a>."
+                                                    }
+                                                },
+                                                {
+                                                    type: "text",
+                                                    data: {                                                        
+                                                        className: "text-left py-2 lg:w-1/2",
+                                                        text: "You also can contribute in way of solving issues of the repository. Open <a href='https://github.com/imprakashraghu/hyderjs/issues' class='hover:text-teal-400 font-medium text-black border-b border-dotted border-gray-700'>Issues</a> and look into if any exists, make a solution to solve the issue related to the library and fix it and close it. The more you solve issues on our repo you will have a chance to become as one of our backers too."
+                                                    }
+                                                },
+                                                {
+                                                    type: "text",
+                                                    data: {
+                                                        className: "text-md text-gray-600 text-left",
+                                                        text: "You can also reach us by ✉️ <a class='hover:text-teal-400 font-medium text-black border-b border-dotted border-gray-700' href='mailto:prakashjaw@hotmail.com'>Email</a> and 💚 <a class='hover:text-teal-400 text-black border-b border-gray-700 border-dotted font-medium' href='https://instagram.com/codewiththamizhan'>IG</a>. <br/>Send us your idea and that'll help us to upgrade the library more."
+                                                    }
+                                                }
+                                                
+                                ]
+                            }
+                        },
+                        {
+                            type: "text",
+                            data: {
+                                id: "support",
+                                text: "How to Support Us 🎉",
+                                className: "text-xl font-bold text-left border-b-4 border-teal-400 mt-10"
+                            }
+                        },
+                        {
+                            type: "container",
+                            data: {                                
+                                arrange: "column",
+                                className: "lg:px-0 px-2 w-full flex items-start justify-center py-4 mt-3",
+                                items: [                                    
+                                                {
+                                                    type: "text",
+                                                    data: {                                                        
+                                                        className: "text-left py-2 lg:w-1/2",
+                                                        text: "Star the GitHub Project ⭐"
+                                                    }
+                                                },                                      
+                                                {
+                                                    type: "text",
+                                                    data: {
+                                                        text: '<a class="github-button" href="https://github.com/imprakashraghu/hyderjs" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-icon="octicon-star" data-size="large" aria-label="Star imprakashraghu/hyderjs on GitHub">Star</a>',
+                                                        padding: 0
+                                                    }
+                                                },
+                                                {
+                                                    type: "text",
+                                                    data: {                                                        
+                                                        className: "text-left py-2 lg:w-1/2",
+                                                        text: "Follow us on GitHub"
+                                                    }
+                                                }, 
+                                                {
+                                                    type: "text",
+                                                    data: {
+                                                        text: '<a class="github-button" href="https://github.com/imprakashraghu" data-color-scheme="no-preference: light; light: dark; dark: dark;" data-size="large" aria-label="Follow @imprakashraghu on GitHub">Follow @imprakashraghu</a>'                                            ,
+                                                        padding: 0
+                                                    }
+                                                },
+                                                {
+                                                    type: "text",
+                                                    data: {
+                                                        padding: 0,
+                                                        text: '<a class="github-button" href="https://github.com/vishwah13" data-color-scheme="no-preference: light; light: dark; dark: dark;" data-size="large" aria-label="Follow @vishwah13 on GitHub">Follow @vishwah13</a>'
+                                                    }
+                                                },
+                                                {
+                                                    type: "text",
+                                                    data: {                                                        
+                                                        className: "text-left py-2 lg:w-1/2",
+                                                        text: "Wanna collaborate for a project? ✉️ <a class='hover:text-teal-400 font-medium text-black border-b border-dotted border-gray-700' href='mailto:prakashjaw@hotmail.com'>Email</a>."
+                                                    }
+                                                },                                                                                       
+                                ]
+                            }
+                        },
+                    ]
+                }
+            },
+            {
+                            type: "container",
+                            data: {
+                                arrange: "column",
+                                className: "flex items-center justify-center w-full bg-black h-48 mt-16 lg:px-0 px-4",                                
+                                items: [
+                                    {
+                                        type: "text",
+                                        data: {
+                                            text: "HyderJS - Code licensed under <a class='hover:text-teal-400 text-white border-b border-dotted' href='/license/'>MIT License</a> - Documentaion licensed by <a class='hover:text-teal-400 text-white border-b border-dotted' href='https://creativecommons.org/licenses/by-nc-sa/4.0/'>CC 4.0</a>",
+                                            className: "text-white text-sm text-center mb-1"
+                                        }
+                                    },
+                                    {
+                                        type: "text",
+                                        data: {
+                                            text: "This website is built using <a class='hover:text-teal-400 text-white border-b border-dotted' href='https://hyderjs.tech/'>HyderJS</a> - Glad we had best CDN from <a class='hover:text-teal-400 text-white border-b border-dotted' href='https://www.jsdelivr.com/'>JSDelivr</a> for <a class='hover:text-teal-400 text-white border-b border-dotted' href='https://cdn.jsdelivr.net/gh/imprakashraghu/hyderjs/lib/hyder.min.js'>HyderJS CDN</a>",
+                                            className: "text-white text-sm py-1 text-center"
+                                        }
+                                    },
+                                    {
+                                        type: "text",
+                                        data: {
+                                            text: "<a class='hover:text-teal-400 text-white border-b border-dotted' href='https://github.com/imprakashraghu/hyderjs'>GitHub Repo</a> - <a class='hover:text-teal-400 text-white border-b border-dotted' href='https://github.com/imprakashraghu/hyderjs/issues/'>Issues</a> - <a class='hover:text-teal-400 text-white border-b border-dotted' href='/docs/v1/'>Docs</a>",
+                                            className: "text-white text-sm py-1 text-center"
+                                        }
+                                    }
+                                    ,
+                                    {
+                                        type: "text",
+                                        data: {
+                                            text: "Made with ❤️ in <span id='loc'>Puducherry</span>",
+                                            className: "text-white text-sm text-center py-2"                                            
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+        ];
+        new HyderJS({
+            bricks: blocks,
+            wall: "app"
+        });       
+
+        window.onload = function() {            
+                randomizeLocation();            
+        }
+
+        let randomizeLocation = () => {
+            let locations = ["Pondicherry", "India", "தமிழ்நாடு"];
+            let randomLocation = locations[Math.floor(Math.random() * locations.length)];
+            document.getElementById('loc').innerText = randomLocation;
+        }
+
+    </script>
+</html>

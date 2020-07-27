@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HyderJS - Javascript Library to build UI for web using JSON</title>
+    <link rel="stylesheet" href="assets/css/tailwind.css" />
+    <link rel="icon" href="assets/img/logo-sm.png" />
+  </head>
+  <style></style>
+  <body>
+    <div id="app"></div>
+  </body>
+  <script src="assets/js/hyder.min.js"></script>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script>
+    let title = {
+      type: "text",
+      data: {
+        text: "Our Fuel",
+        className:
+          "font-bold text-lg mx-4 border-b-4 border-teal-400 box-border",
+      },
+    };
+    let description = {
+      type: "text",
+      data: {
+        text:
+          "This library basically uses Javascript Object Notation is a simple form of denotating a data to render the website that it is so simple to learn.",
+        className: "mx-4 my-2 lg:w-1/3 text-center",
+      },
+    };
+    let description1 = {
+      type: "text",
+      data: {
+        text:
+          "This libray basically uses Javascript Object Notation is a simple form of denotating a data to render the website that it is so simple to learn.",
+        className: "mx-4 my-2 w-full text-left",
+      },
+    };
+    let blocks = [
+      {
+        type: "container",
+        data: {
+          className:
+            "bg-black py-4 px-4 mx-2 my-3 rounded-md flex items-center justify-between",
+          items: [
+            {
+              type: "text",
+              data: {
+                text: "HyderJS",
+                className: "text-white font-bold text-lg cursor-pointer",
+                onclick: function () {
+                  window.location.replace("/");
+                },
+              },
+            },
+            {
+              type: "container",
+              className: "flex items-center",
+              data: {
+                items: [
+                  {
+                    type: "link",
+                    data: {
+                      text: "Why HyderJS",
+                      className:
+                        "hidden lg:block text-sm text-white cursor-pointer hover:text-teal-400 mx-2",
+                      href: "#why",
+                    },
+                  },
+                  {
+                    type: "link",
+                    data: {
+                      text: "Contribute",
+                      className:
+                        "text-sm text-white cursor-pointer hover:text-teal-400 mx-2",
+                      href: "#contribute",
+                    },
+                  },
+                  {
+                    type: "link",
+                    data: {
+                      text: "Documentation",
+                      className:
+                        "hidden lg:block text-sm text-white cursor-pointer hover:text-teal-400 mx-2",
+                      href: "/docs/v1/",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+        },
+      },
+      {
+        type: "container",
+        data: {
+          className: "flex flex-col items-center justify-center lg:px-0 px-2",
+          items: [
+            {
+              type: "image",
+              data: {
+                src: "assets/img/logo.png",
+                style: {
+                  width: "100%",
+                  objectFit: "contain",
+                  maxHeight: "170px",
+                  padding: 0,
+                  margin: 0,
+                },
+              },
+            },
+            {
+              type: "text",
+              data: {
+                className:
+                  "text-4xl items-center font-black mt-2 lg:w-1/3 text-center leading-tight",
+                text: "Create Websites with the power of JSON",
+              },
+            },
+            {
+              type: "text",
+              data: {
+                className: "text-md mt-2",
+                text: "come on just type json with us",
+              },
+            },
+            {
+              type: "button",
+              data: {
+                className:
+                  "bg-teal-400 hover:text-white my-4 px-4 py-2 font-bold rounded-md outline-none focus:outline-none",
+                text: "Get Started",
+                onclick: function () {
+                  window.location.replace("/docs/v1/");
+                },
+              },
+            },
+            {
+              type: "text",
+              data: {
+                className: "text-sm",
+                text:
+                  "Beta Version <span class='text-xs font-bold bg-black p-1 text-white rounded-md'>0.0.1</span>",
+              },
+            },
+          ],
+        },
+      },
+      {
+        type: "container",
+        data: {
+          className: "flex flex-col items-center justify-center py-8 mt-12",
+          items: [
+            {
+              ...title,
+              data: {
+                ...title.data,
+                text: "Open Source",
+              },
+            },
+            {
+              ...description,
+              data: {
+                ...description.data,
+                text:
+                  "HyderJS is an open source javascript library which is built on top of ECMA Script 6 🔥 created and developed by <a class='hover:text-teal-500'>Hemaprakash Raghu</a> and <a class='hover:text-teal-500'>Vishwah</a>.",
+              },
+            },
+            {
+              type: "container",
+              data: {
+                items: [
+                  {
+                    type: "link",
+                    data: {
+                      text: "View on GitHub",
+                      href: "https://github.com/imprakashraghu/hyderjs",
+                      className:
+                        "mx-1 text-gray-600 border-b-4 hover:border-teal-400 cursor-pointer",
+                    },
+                  },
+                  {
+                    type: "link",
+                    data: {
+                      text: "Star it ⭐",
+                      href: "https://github.com/imprakashraghu/hyderjs",
+                      className:
+                        "mx-2 text-gray-600 border-b-4 hover:border-teal-400 cursor-pointer",
+                    },
+                  },
+                ],
+              },
+            }            
+          ],
+        },
+      },
+      {
+        type: "container",
+        data: {
+          id: "why",
+          className: "flex flex-col items-center justify-center py-8",
+          items: [title, description],
+        },
+      },
+      {
+        type: "container",
+        data: {
+          className:
+            "lg:px-0 px-2 py-4 lg:mx-8 lg:flex-row items-center flex-col",
+          items: [
+            {
+              type: "card",
+              data: {
+                className: "w-full lg:w-1/2 mx-4 lg:my-0 my-4",
+                items: [
+                  {
+                    type: "container",
+                    data: {
+                      className: "flex flex-col items-center justify-center",
+                      items: [
+                        {
+                          type: "image",
+                          data: {
+                            width: 50,
+                            padding: 0,
+                            src: "assets/img/fire.svg",
+                          },
+                        },
+                        {
+                          ...title,
+                          data: {
+                            ...title.data,                             
+                            text: "Reusuable",
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  {
+                    ...description1,
+                    data: {
+                      ...description1.data,
+                      text:
+                        "Objects created here can be reused to create other components making it more flexible and easy.",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              type: "card",
+              data: {
+                className: "w-full lg:w-1/2 mx-4",
+                items: [
+                  {
+                    type: "container",
+                    data: {
+                      className: "flex flex-col items-center justify-center",
+                      items: [
+                        {
+                          type: "image",
+                          data: {
+                            width: 50,
+                            padding: 0,
+                            src: "assets/img/plant.svg",
+                          },
+                        },
+                        {
+                          ...title,
+                          data: {
+                            ...title.data,
+                            text: "Simple",
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  {
+                    ...description1,
+                    data: {
+                      ...description1.data,
+                      text:
+                        "Being a popular type of denoting and easiest way of reading data, json can be learnt more faster than other types.",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+        },
+      },
+      {
+        type: "container",
+        data: {
+          className:
+            "lg:px-0 px-2 py-4 lg:mx-8 lg:flex-row items-center flex-col",
+          items: [
+            {
+              type: "card",
+              data: {
+                className: "lg:my-0 my-4 w-full lg:w-1/2 mx-4",
+                items: [
+                  {
+                    type: "container",
+                    data: {
+                      className: "flex flex-col items-center justify-center",
+                      items: [
+                        {
+                          type: "image",
+                          data: {
+                            width: 40,
+                            padding: 0,
+                            src: "assets/img/water.svg",
+                          },
+                        },
+                        {
+                          ...title,
+                          data: {
+                            ...title.data,
+                            text: "Amphibious",
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  {
+                    ...description1,
+                    data: {
+                      ...description1.data,
+                      text:
+                        "Can be easily integrated with all types of CSS frameworks for more customized style sheets for your website.",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              type: "card",
+              data: {
+                className: "w-full lg:w-1/2 mx-4",
+                items: [
+                  {
+                    type: "container",
+                    data: {
+                      className: "flex flex-col items-center justify-center",
+                      items: [
+                        {
+                          type: "image",
+                          data: {
+                            width: 60,
+                            padding: 0,
+                            src: "assets/img/worldwide.svg",
+                          },
+                        },
+                        {
+                          ...title,
+                          data: {
+                            ...title.data,
+                            text: "OpenSource",
+                          },
+                        },
+                      ],
+                    },
+                  },
+                  {
+                    ...description1,
+                    data: {
+                      ...description1.data,
+                      text:
+                        "Free and open source library making lot of developers around the globe for contribution.",
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+        },
+      },
+      {
+        type: "container",
+        data: {
+          id: "contribute",
+          arrange: "column",
+          className:
+            "lg:px-0 px-2 w-full flex items-center justify-center py-4 mt-8",
+          items: [
+            {
+              ...title,
+              data: {
+                ...title.data,
+                text: "Contributors",
+              },
+            },
+            {
+              ...description,
+              data: {
+                ...description.data,
+                className: "text-center py-2",
+                text:
+                  "Every thing has its own defect and these people help us to fix and keep the engine 🚀 running",
+              },
+            },
+            {
+              type: "container",
+              data: {
+                className: "flex items-start my-2",
+                items: [
+                  {
+                    type: "image",
+                    data: {
+                      src:
+                        "https://avatars.githubusercontent.com/u/41544971?s=300",
+                      className: "h-8 w-8 rounded-full mx-2",
+                      title: "imprakashraghu",
+                      alt: "git profile image",
+                    },
+                  },
+                  {
+                    type: "image",
+                    data: {
+                      src:
+                        "https://avatars.githubusercontent.com/u/52098098?s=300",
+                      className: "h-8 w-8 rounded-full mx-2",
+                      title: "vishwah13",
+                      alt: "git profile image",
+                    },
+                  },
+                  {
+                    type: "image",
+                    data: {
+                      src:
+                        "https://avatars.githubusercontent.com/u/51748359?s=300",
+                      className: "h-8 w-8 rounded-full mx-2",
+                      title: "balajiR",
+                      alt: "git profile image",
+                    },
+                  },
+                  {
+                    type: "image",
+                    data: {
+                      src:
+                        "https://avatars.githubusercontent.com/u/53446404?s=300",
+                      className: "h-8 w-8 rounded-full mx-2",
+                      title: "younusesherif",
+                      alt: "git profile image",
+                    },
+                  },                  
+                ],
+              },
+            },
+            {
+              type: "link",
+              data: {
+                text: "Become a Contributor",
+                href: "/contribute/",
+                className:
+                  "text-gray-600 border-b-4 hover:border-teal-400 cursor-pointer mt-3",
+              },
+            },
+          ],
+        },
+      },
+      {
+        type: "container",
+        data: {
+          className: "flex flex-col items-center justify-center py-8",
+          items: [
+            {
+              ...title,
+              data: {
+                ...title.data,
+                text: "Reach Team",
+              },
+            },
+            {
+              ...description,
+              data: {
+                ...description.data,
+                text:
+                  "Independent developers are the real team members, core team and owner of the repository is maintained and you can reach us by ✉️ <a class='hover:text-teal-400 font-medium text-black border-b border-dotted border-gray-700' href='mailto:prakashjaw@hotmail.com'>Email</a> and 💚 <a class='hover:text-teal-400 text-black border-b border-gray-700 border-dotted font-medium' href='https://instagram.com/codewiththamizhan'>IG</a>",
+              },
+            },
+          ],
+        },
+      },
+      {
+        type: "container",
+        data: {
+          arrange: "column",
+          className:
+            "flex items-center justify-center w-full bg-black h-48 mt-20",
+          items: [
+            {
+              type: "text",
+              data: {
+                text:
+                  "HyderJS - Code licensed under <a class='hover:text-teal-400 text-white border-b border-dotted' href='/license/'>MIT License</a> - Documentaion licensed by <a class='hover:text-teal-400 text-white border-b border-dotted' href='https://creativecommons.org/licenses/by-nc-sa/4.0/'>CC 4.0</a>",
+                className: "text-white text-sm text-center mb-1",
+              },
+            },
+            {
+              type: "text",
+              data: {
+                text:
+                  "This website is built using <a class='hover:text-teal-400 text-white border-b border-dotted' href='https://hyderjs.tech/'>HyderJS</a> - Glad we had best CDN from <a class='hover:text-teal-400 text-white border-b border-dotted' href='https://www.jsdelivr.com/'>JSDelivr</a> for <a class='hover:text-teal-400 text-white border-b border-dotted' href='https://cdn.jsdelivr.net/gh/imprakashraghu/hyderjs/lib/hyder.min.js'>HyderJS CDN</a>",
+                className: "text-white text-sm py-1 text-center",
+              },
+            },
+            {
+              type: "text",
+              data: {
+                text:
+                  "<a class='hover:text-teal-400 text-white border-b border-dotted' href='https://github.com/imprakashraghu/hyderjs'>GitHub Repo</a> - <a class='hover:text-teal-400 text-white border-b border-dotted' href='https://github.com/imprakashraghu/hyderjs/issues'>Issues</a> - <a class='hover:text-teal-400 text-white border-b border-dotted' href='/docs/v1/'>Docs</a>",
+                className: "text-white text-sm py-1 text-center",
+              },
+            },
+            {
+              type: "text",
+              data: {
+                text: "Made with ❤️ in <span id='loc'>Puducherry</span>",
+                className: "text-white text-sm text-center py-2",
+              },
+            },
+          ],
+        },
+      },
+    ];
+
+    new HyderJS({
+      bricks: blocks,
+      wall: "app",
+    });
+
+    window.onload = function () {
+        randomizeLocation();
+    };
+
+    let randomizeLocation = () => {
+      let locations = ["Pondicherry", "India", "தமிழ்நாடு"];
+      let randomLocation =
+        locations[Math.floor(Math.random() * locations.length)];
+      document.getElementById("loc").innerText = randomLocation;
+    };
+  </script>
+</html>

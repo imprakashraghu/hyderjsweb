@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation v1 - HyderJS</title>    
+    <link rel="stylesheet" href="../../assets/css/tailwind.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <link rel="icon" href="../../assets/img/logo-sm.png">
+</head>
+<body>
+    <div id="app"></div>
+</body>    
+    <script src="../../assets/js/hyder.min.js"></script>    
+    <script>
+        let description1 =  {
+                                        type:"text",
+                                        data: {
+                                            text: "This libray basically uses Javascript Object Notation is a simple form of denotating a data to render the website that it is so simple to learn.",
+                                            className: "mx-4 my-2 w-full text-left"
+                                        }
+                                    };
+       function copyMe(text) {            
+            const el = document.createElement('textarea');
+            el.value = text;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+        }
+        let title = {
+                                        type: "text",
+                                        data: {
+                                            text: "Understand",
+                                            className: "font-bold text-md px-2 border-b-4 border-teal-400 box-border mt-6"                                            
+                                        }
+                                    };
+        let blocks = [
+                            {
+                                type: "container",
+                                data: {    
+                                    id: "top",                                                
+                                    className: "bg-black py-4 px-8 mx-2 my-3 rounded-md flex items-center justify-between",
+                                    items: [
+                                        {
+                                            type: "text",
+                                            data: {
+                                                text: "HyderJS <a class='text-teal-400'>Docs</a> 📄",
+                                                className: "text-white font-bold text-lg cursor-pointer",
+                                                onclick: function() {
+                                                    window.location.replace("/");
+                                                }
+                                            }
+                                        },
+                                        {
+                                            type: "container",
+                                            className: "flex items-center",
+                                            data: {
+                                                items: [
+                                                    {
+                                                        type: "link",
+                                                        data: {
+                                                            text: "Home",
+                                                            className: "text-sm text-white cursor-pointer hover:text-teal-400 mx-2",
+                                                            href: "/"
+                                                        }
+                                                    }                                    
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                type: "container",
+                                data: {
+                                    className: "flex flex-col items-center justify-center lg:px-0 px-4",
+                                    items: [
+                                        title,
+                                        {
+                                            type: "text",
+                                            data: {
+                                                text: "HyderJS is a javascript library used to build wesbites with the help of JSON by creating a virutal dom and rendering it on the real dom. Instead of heavy html-markup we render your light weighted and structured json into required html.",
+                                                className: "py-2 text-sm text-center lg:w-1/2"
+                                            }
+                                        },
+                                        {
+                                            type: "text",
+                                            data: {
+                                                text: "Here the data is structured and clean so that any change to that is easy and simple. As this is the beta version the library is limited with the components but all the basic components needed are available to work with. This library can render and handle only small and single page websites as it in its beta version we are working on it. Many developers like you can contribute to it.",
+                                                className: "py-2 text-sm text-center lg:w-1/2"
+                                            }
+                                        },
+                                        {
+                                            type: "text",
+                                            data: {
+                                                text: "Free? <strong>Hell Yeah! 💯</strong>",
+                                                className: "py-2 text-sm text-center lg:w-1/2"
+                                            }
+                                        },
+                                        {
+                                            ...title,
+                                            data: {
+                                                ...title.data,
+                                                text: "Getting Started"
+                                            }
+                                        },
+                                        {
+                                            type: "container",
+                                            data: {
+                                                className: "flex flex-col items-center justify-center lg:px-0 px-2 mt-4",                                                
+                                                items: [
+                                                    {
+                                                        type: "text",
+                                                        data: {
+                                                            text: "<span class='font-bold'>Get your Starter Template for development</span>",
+                                                            className: "text-gray-700 text-sm py-3"
+                                                        }
+                                                    },
+                                                    {
+                                                        type: "button",
+                                                        data: {
+                                                            text: "<a class='fa fa-download mx-1'></a> Download",                                                            
+                                                            className: "hover:text-black bg-teal-400 px-3 py-2 text-sm text-white font-medium rounded-md outline-none focus:outline-none",
+                                                            onclick: function() {
+                                                                console.log('starter template')
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        type: "text",
+                                                        data: {
+                                                            text: "<span class='font-bold'>cdn link</span>",
+                                                            className: "text-gray-700 text-sm py-3"
+                                                        }
+                                                    },
+                                                    {
+                                                        type: "text",
+                                                        data: {                                                                     
+                                                            text: "<code class='block lg:hidden md:hidden'>HyderJS CDN</code><code class='hidden md:block lg:block'>https://cdn.jsdelivr.net/gh/imprakashraghu/hyderjs/lib/hyder.min.js</code><a class='text-gray-700 hover:text-black cursor-pointer px-2 fa fa-clone'></a>",
+                                                            className: "text-xs md:text-sm lg:text-sm bg-gray-300 rounded-md lg:px-6 md:px-6 p-3 text-black flex flex-row items-center",                                                            
+                                                            onclick: function() {
+                                                                copyMe('https://cdn.jsdelivr.net/gh/imprakashraghu/hyderjs/lib/hyder.min.js');
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        type: "text",
+                                                        data: {
+                                                            text: "<span class='font-bold'>declare your instance</span> <br/> add your json array to the bricks key and add the root div id to the wall key where you need to render your website.",
+                                                            className: "text-gray-700 text-sm py-2 mt-4 text-center"
+                                                        }
+                                                    },
+                                                    {
+                                                        type: "text",
+                                                        data: {                                                                     
+                                                            text: "<code><span class='font-bold'>new</span> <span class='text-teal-500 font-bold'>HyderJS</span>({ <br/>  bricks: [...],<br/> wall: 'root_id'<br/> });</code> <a class='text-gray-700 hover:text-black cursor-pointer px-2 fa fa-clone'></a>",
+                                                            className: "text-sm bg-gray-300 rounded-md px-10 py-2 my-2 text-black",                                                            
+                                                            onclick: function() {
+                                                                copyMe('new HyderJS({ bricks: [/** Your JSON array */], wall: "ID_OF_CONTAINER" });');
+                                                            }
+                                                        }
+                                                    },
+                                                    // {
+                                                    //     type: "text",
+                                                    //     data: {
+                                                    //         text: "<span class='font-bold'>npm installation</span> <br/>this automatically creates structure for your project and easy to use.",
+                                                    //         className: "text-gray-700 text-center text-sm py-3 mt-4"
+                                                    //     }
+                                                    // },
+                                                    // {
+                                                    //     type: "text",
+                                                    //     data: {                                                                     
+                                                    //         text: "<code>npm install -g hyderjs</code> <a class='text-gray-700 hover:text-black cursor-pointer px-2 fa fa-clone'></a>",
+                                                    //         className: "text-sm bg-gray-300 rounded-md px-6 py-2 text-black",                                                            
+                                                    //         onclick: function() {
+                                                    //             copyMe('npm install -g hyderjs');
+                                                    //         }
+                                                    //     }
+                                                    // },
+                                                    // {
+                                                    //     type: "text",
+                                                    //     data: {                                                                     
+                                                    //         text: "<code>hyderjs createapp <-project-name-> </code> <a class='text-gray-700 hover:text-black cursor-pointer px-2 fa fa-clone'></a>",
+                                                    //         className: "text-sm bg-gray-300 rounded-md px-6 py-2 text-black my-3",                                                            
+                                                    //         onclick: function() {
+                                                    //             copyMe('npm install -g hyderjs');
+                                                    //         }
+                                                    //     }
+                                                    // }
+                                                ]
+                                            }
+
+                                        },
+                                        {
+                                            ...title,
+                                            data: {
+                                                ...title.data,
+                                                text: "Components",                                                                                     
+                                            }
+                                        },
+                                        {
+                                            type: "container",
+                                            data: {
+                                                className: "py-4 mt-4 lg:mt-12 md:mx-8 flex lg:flex-row flex-col",                                                
+                                                items: [
+                                                    {
+                                                        type: "card",
+                                                        data: {
+                                                            className: "lg:my-0 my-4 w-full lg:w-1/2 mx-2 lg:mx-4 text-left transform hover:shadow-lg",
+                                                            arrange: "column",  
+                                                            align: "start",                                         
+                                                            items: [                                               
+                                                                    {
+                                                                                type: "text",
+                                                                                data: {
+                                                                                    text: "Text",
+                                                                                    className: "text-lg px-4 font-bold"
+                                                                                }
+                                                                    },
+                                                                    {
+                                                                        type: "text",
+                                                                        data: {
+                                                                            text: "Text is a paragraph element which is supported with all type of attributes that it usually does. All HTML attributes supported.",
+                                                                            className: "text-sm px-4 py-1"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        type: "text",
+                                                                        data: {
+                                                                            text: "<code>type: 'text'</code> , <code>data: { text: '' }</code>"
+                                                                        }
+                                                                    },                                                                    
+                                                                    {
+                                                                        type: "button",
+                                                                        data: {
+                                                                            text: "Copy <a class='px-2 fa fa-clone'></a>",
+                                                                            className: "rounded-md cursor-pointer hover:bg-teal-300 mx-4 px-4 py-2 text-sm border border-teal-300",
+                                                                            onclick: function() {
+                                                                                let component_text = {
+                                                                                    type: "text",
+                                                                                    data: {
+                                                                                        text: "Text of paragraph",
+                                                                                        style: {
+                                                                                            color: "black",
+                                                                                            backgroundColor: "transparent"
+                                                                                        },
+                                                                                        margin: {
+                                                                                            x: 2,
+                                                                                            y: 2
+                                                                                        },
+                                                                                        padding: 2,
+                                                                                        //className: ""
+                                                                                    }
+                                                                                };
+                                                                                copyMe(JSON.stringify(component_heading));
+                                                                            }
+                                                                        }
+                                                                    }
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        type: "card",
+                                                        data: {
+                                                            className: "w-full lg:w-1/2 mx-2 lg:mx-4 text-left hover:shadow-lg",
+                                                            arrange: "column",  
+                                                            align: "start",                                         
+                                                            items: [                                               
+                                                                    {
+                                                                                type: "text",
+                                                                                data: {
+                                                                                    text: "Heading",
+                                                                                    className: "text-lg px-4 font-bold"
+                                                                                }
+                                                                    },
+                                                                    {
+                                                                        type: "text",
+                                                                        data: {
+                                                                            text: "Heading is a heading element which is supported with all type of attributes that it usually does. All HTML attributes supported.",
+                                                                            className: "text-sm px-4 py-1"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        type: "text",
+                                                                        data: {
+                                                                            text: "<code>type: 'heading'</code> , <code>data: { level: 2, text: '' }</code>"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        type: "button",
+                                                                        data: {
+                                                                            text: "Copy <a class='px-2 fa fa-clone'></a>",
+                                                                            className: "rounded-md cursor-pointer hover:bg-teal-300 mx-4 px-4 py-2 text-sm border border-teal-300",
+                                                                            onclick: function() {
+                                                                                let component_heading = {
+                                                                                    type: "heading",
+                                                                                    data: {
+                                                                                        level: 2,
+                                                                                        text: "Text of Heading",
+                                                                                        style: {
+                                                                                            color: "black",
+                                                                                            backgroundColor: "transparent"
+                                                                                        },
+                                                                                        margin: {
+                                                                                            x: 2,
+                                                                                            y: 2
+                                                                                        },
+                                                                                        padding: 2,
+                                                                                        //className: ""
+                                                                                    }
+                                                                                };
+                                                                                copyMe(JSON.stringify(component_heading));
+                                                                            }
+                                                                        }
+                                                                    }
+                                                            ]
+                                                        }
+                                                    },
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            type: "container",
+                                            data: {
+                                                className: "py-4 mt-4 lg:mt-12 md:mx-8 flex lg:flex-row flex-col",                                                
+                                                items: [
+                                                    {
+                                                        type: "card",
+                                                        data: {
+                                                            className: "lg:my-0 my-4 w-full lg:w-1/2 mx-2 lg:mx-4 text-left hover:shadow-lg",
+                                                            arrange: "column",  
+                                                            align: "start",                                         
+                                                            items: [                                               
+                                                                    {
+                                                                                type: "text",
+                                                                                data: {
+                                                                                    text: "Button",
+                                                                                    className: "text-lg px-4 font-bold"
+                                                                                }
+                                                                    },
+                                                                    {
+                                                                        type: "text",
+                                                                        data: {
+                                                                            text: "Button is a button dom element which is supported with all type of attributes that it usually does. All HTML attributes supported.",
+                                                                            className: "text-sm px-4 py-1"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        type: "text",
+                                                                        data: {
+                                                                            text: "<code>type: 'button'</code> , <code>data: { text: '' }</code>"
+                                                                        }
+                                                                    },                                                                    
+                                                                    {
+                                                                        type: "button",
+                                                                        data: {
+                                                                            text: "Copy <a class='px-2 fa fa-clone'></a>",
+                                                                            className: "rounded-md cursor-pointer hover:bg-teal-300 mx-4 px-4 py-2 text-sm border border-teal-300",
+                                                                            onclick: function() {
+                                                                                let component_button = {
+                                                                                    type: "button",
+                                                                                    data: {
+                                                                                        text: "Elegant",
+                                                                                        type: "elegant",
+                                                                                        style: {
+                                                                                            color: "black"                                                                                            
+                                                                                        },
+                                                                                        margin: {
+                                                                                            x: 2,
+                                                                                            y: 2
+                                                                                        },
+                                                                                        padding: 2,
+                                                                                        //className: ""
+                                                                                    }
+                                                                                };
+                                                                                copyMe(JSON.stringify(component_button));
+                                                                            }
+                                                                        }
+                                                                    }
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        type: "card",
+                                                        data: {
+                                                            className: "w-full lg:w-1/2 mx-2 lg:mx-4 text-left hover:shadow-lg",
+                                                            arrange: "column",  
+                                                            align: "start",                                         
+                                                            items: [                                               
+                                                                    {
+                                                                                type: "text",
+                                                                                data: {
+                                                                                    text: "Input",
+                                                                                    className: "text-lg px-4 font-bold"
+                                                                                }
+                                                                    },
+                                                                    {
+                                                                        type: "text",
+                                                                        data: {
+                                                                            text: "Input is a input dom element which is supported with all type of attributes that it usually does Exception of checkbox and radio types. All HTML attributes supported.",
+                                                                            className: "text-sm px-4 py-1"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        type: "text",
+                                                                        data: {
+                                                                            text: "<code>type: 'input'</code> , <code>data: { type: '' }</code>"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        type: "button",
+                                                                        data: {
+                                                                            text: "Copy <a class='px-2 fa fa-clone'></a>",
+                                                                            className: "rounded-md cursor-pointer hover:bg-teal-300 mx-4 px-4 py-2 text-sm border border-teal-300",
+                                                                            onclick: function() {
+                                                                                let component_input = {
+                                                                                    type: "input",
+                                                                                    data: {
+                                                                                        input: "email",   
+                                                                                        placeholder: "Email Address",                                                                                                                                                                             
+                                                                                        style: {
+                                                                                            color: "black",
+                                                                                            backgroundColor: "transparent"
+                                                                                        },
+                                                                                        margin: {
+                                                                                            x: 2,
+                                                                                            y: 2
+                                                                                        },
+                                                                                        padding: 2,
+                                                                                        //className: ""
+                                                                                    }
+                                                                                };
+                                                                                copyMe(JSON.stringify(component_input));
+                                                                            }
+                                                                        }
+                                                                    }
+                                                            ]
+                                                        }
+                                                    },
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            type: "container",
+                                            data: {
+                                                className: "py-4 mt-4 lg:mt-12 md:mx-8 flex lg:flex-row flex-col",                                                 
+                                                items: [
+                                                    {
+                                                        type: "card",
+                                                        data: {
+                                                            className: "lg:my-0 my-4 w-full lg:w-1/2 mx-2 lg:mx-4 text-left hover:shadow-lg",
+                                                            arrange: "column",  
+                                                            align: "start",                                         
+                                                            items: [                                               
+                                                                    {
+                                                                                type: "text",
+                                                                                data: {
+                                                                                    text: "Container",
+                                                                                    className: "text-lg px-4 font-bold"
+                                                                                }
+                                                                    },
+                                                                    {
+                                                                        type: "text",
+                                                                        data: {
+                                                                            text: "Container is a div dom element which is supported with all type of attributes that it usually does and can nest any type component into this. All HTML attributes supported.",
+                                                                            className: "text-sm px-4 py-1"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        type: "text",
+                                                                        data: {
+                                                                            text: "<code>type: 'container'</code> , <code>data: { items: [...] }</code>"
+                                                                        }
+                                                                    },                                                                    
+                                                                    {
+                                                                        type: "button",
+                                                                        data: {
+                                                                            text: "Copy <a class='px-2 fa fa-clone'></a>",
+                                                                            className: "rounded-md cursor-pointer hover:bg-teal-300 mx-4 px-4 py-2 text-sm border border-teal-300",
+                                                                            onclick: function() {
+                                                                                let component_container = {
+                                                                                    type: "container",
+                                                                                    data: {
+                                                                                        arrange: "row",
+                                                                                        align: "column", 
+                                                                                        items: [/** OTHER TYPE OF COMPONENTS */],                                                                                                                                                                               
+                                                                                        style: {
+                                                                                            color: "black"                                                                                            
+                                                                                        },
+                                                                                        margin: {
+                                                                                            x: 2,
+                                                                                            y: 2
+                                                                                        },
+                                                                                        padding: 2
+                                                                                        //className: ""
+                                                                                    }
+                                                                                };
+                                                                                copyMe(JSON.stringify(component_container));
+                                                                            }
+                                                                        }
+                                                                    }
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        type: "card",
+                                                        data: {
+                                                            className: "w-full lg:w-1/2 mx-2 lg:mx-4 text-left hover:shadow-lg",
+                                                            arrange: "column",  
+                                                            align: "start",                                         
+                                                            items: [                                               
+                                                                    {
+                                                                                type: "text",
+                                                                                data: {
+                                                                                    text: "Link",
+                                                                                    className: "text-lg px-4 font-bold"
+                                                                                }
+                                                                    },
+                                                                    {
+                                                                        type: "text",
+                                                                        data: {
+                                                                            text: "Link is a anchor dom element which is supported with all type of attributes that it usually does. All HTML attributes supported.",
+                                                                            className: "text-sm px-4 py-1"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        type: "text",
+                                                                        data: {
+                                                                            text: "<code>type: 'link'</code> , <code>data: { href: '' }</code>"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        type: "button",
+                                                                        data: {
+                                                                            text: "Copy <a class='px-2 fa fa-clone'></a>",
+                                                                            className: "rounded-md cursor-pointer hover:bg-teal-300 mx-4 px-4 py-2 text-sm border border-teal-300",
+                                                                            onclick: function() {
+                                                                                let component_link = {
+                                                                                    type: "link",
+                                                                                    data: {
+                                                                                        href: "URL_LINK",                                                                                                                                             
+                                                                                        style: {
+                                                                                            color: "black",
+                                                                                            backgroundColor: "transparent",
+                                                                                            textDecoration: "underline"
+                                                                                        },
+                                                                                        margin: {
+                                                                                            x: 2,
+                                                                                            y: 2
+                                                                                        },
+                                                                                        padding: 2,
+                                                                                        //className: ""
+                                                                                    }
+                                                                                };
+                                                                                copyMe(JSON.stringify(component_link));
+                                                                            }
+                                                                        }
+                                                                    }
+                                                            ]
+                                                        }
+                                                    },
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            type: "container",
+                                            data: {
+                                                className: "py-4 mt-4 lg:mt-12 md:mx-8 flex lg:flex-row flex-col",                                                
+                                                items: [
+                                                    {
+                                                        type: "card",
+                                                        data: {
+                                                            className: "lg:my-0 my-4 w-full lg:w-1/2 mx-2 lg:mx-4 text-left hover:shadow-lg",
+                                                            arrange: "column",  
+                                                            align: "start",                                         
+                                                            items: [                                               
+                                                                    {
+                                                                                type: "text",
+                                                                                data: {
+                                                                                    text: "List",
+                                                                                    className: "text-lg px-4 font-bold"
+                                                                                }
+                                                                    },
+                                                                    {
+                                                                        type: "text",
+                                                                        data: {
+                                                                            text: "List is a ul or ol dom element which is supported with different types of list usually it does. All HTML attributes supported.",
+                                                                            className: "text-sm px-4 py-1"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        type: "text",
+                                                                        data: {
+                                                                            text: "<code>type: 'list'</code> , <code>data: { listType: ' ', items: [...] }</code>"
+                                                                        }
+                                                                    },                                                                    
+                                                                    {
+                                                                        type: "button",
+                                                                        data: {
+                                                                            text: "Copy <a class='px-2 fa fa-clone'></a>",
+                                                                            className: "rounded-md cursor-pointer hover:bg-teal-300 mx-4 px-4 py-2 text-sm border border-teal-300",
+                                                                            onclick: function() {
+                                                                                let component_list = {
+                                                                                    type: "list",
+                                                                                    data: {                                                                                        
+                                                                                        items: [
+                                                                                            { text: "item1" }
+                                                                                        ],                                                                                                                                                                               
+                                                                                        style: {
+                                                                                            color: "black"                                                                                            
+                                                                                        },
+                                                                                        margin: {
+                                                                                            x: 2,
+                                                                                            y: 2
+                                                                                        },
+                                                                                        padding: 2
+                                                                                        //className: ""
+                                                                                    }
+                                                                                };
+                                                                                copyMe(JSON.stringify(component_list));
+                                                                            }
+                                                                        }
+                                                                    }
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        type: "card",
+                                                        data: {
+                                                            className: "w-full lg:w-1/2 mx-2 lg:mx-4 text-left hover:shadow-lg",
+                                                            arrange: "column",  
+                                                            align: "start",                                         
+                                                            items: [                                               
+                                                                    {
+                                                                                type: "text",
+                                                                                data: {
+                                                                                    text: "Dropdown",
+                                                                                    className: "text-lg px-4 font-bold"
+                                                                                }
+                                                                    },
+                                                                    {
+                                                                        type: "text",
+                                                                        data: {
+                                                                            text: "Dropdown is a select dom element which is supported with all type of attributes that it usually does. All HTML attributes supported.",
+                                                                            className: "text-sm px-4 py-1"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        type: "text",
+                                                                        data: {
+                                                                            text: "<code>type: 'dropdown'</code> , <code>data: { options: [...] }</code>"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        type: "button",
+                                                                        data: {
+                                                                            text: "Copy <a class='px-2 fa fa-clone'></a>",
+                                                                            className: "rounded-md cursor-pointer hover:bg-teal-300 mx-4 px-4 py-2 text-sm border border-teal-300",
+                                                                            onclick: function() {
+                                                                                let component_select = {
+                                                                                    type: "dropdown",
+                                                                                    data: {
+                                                                                        options: [
+                                                                                            {
+                                                                                                text: "Text of option",
+                                                                                                value: "Value of option",
+                                                                                                style: {
+                                                                                                    // styles
+                                                                                                },
+                                                                                                // className: ""
+                                                                                            }
+                                                                                        ],                                                                                                                                                                                                                                  
+                                                                                        style: {
+                                                                                            color: "black",
+                                                                                            backgroundColor: "transparent",
+                                                                                            textDecoration: "underline"
+                                                                                        },
+                                                                                        margin: {
+                                                                                            x: 2,
+                                                                                            y: 2
+                                                                                        },
+                                                                                        padding: 2,
+                                                                                        //className: ""
+                                                                                    }
+                                                                                };
+                                                                                copyMe(JSON.stringify(component_select));
+                                                                            }
+                                                                        }
+                                                                    }
+                                                            ]
+                                                        }
+                                                    },
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            type: "container",
+                                            data: {
+                                                className: "py-4 mt-4 lg:mt-12 md:mx-8 flex lg:flex-row flex-col",                                                 
+                                                items: [
+                                                    {
+                                                        type: "card",
+                                                        data: {
+                                                            className: "lg:my-0 my-4 w-full lg:w-1/2 mx-2 lg:mx-4 text-left hover:shadow-lg",
+                                                            arrange: "column",  
+                                                            align: "start",                                         
+                                                            items: [                                               
+                                                                    {
+                                                                                type: "text",
+                                                                                data: {
+                                                                                    text: "Break",
+                                                                                    className: "text-lg px-4 font-bold"
+                                                                                }
+                                                                    },
+                                                                    {
+                                                                        type: "text",
+                                                                        data: {
+                                                                            text: "Break is a br or hr dom element which is supported with different types of list usually it does. All HTML attributes supported.",
+                                                                            className: "text-sm px-4 py-1"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        type: "text",
+                                                                        data: {
+                                                                            text: "<code>type: 'break'</code> , <code>data: { type: 'br or hr' }</code>"
+                                                                        }
+                                                                    },                                                                    
+                                                                    {
+                                                                        type: "button",
+                                                                        data: {
+                                                                            text: "Copy <a class='px-2 fa fa-clone'></a>",
+                                                                            className: "rounded-md cursor-pointer hover:bg-teal-300 mx-4 px-4 py-2 text-sm border border-teal-300",
+                                                                            onclick: function() {
+                                                                                let component_break = {
+                                                                                    type: "list",
+                                                                                    data: {                                                                                        
+                                                                                        type: "br"
+                                                                                        //className: ""
+                                                                                    }
+                                                                                };
+                                                                                copyMe(JSON.stringify(component_break));
+                                                                            }
+                                                                        }
+                                                                    }
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        type: "card",
+                                                        data: {
+                                                            className: "w-full lg:w-1/2 mx-2 lg:mx-4 text-left hover:shadow-lg",
+                                                            arrange: "column",  
+                                                            align: "start",                                         
+                                                            items: [                                               
+                                                                    {
+                                                                                type: "text",
+                                                                                data: {
+                                                                                    text: "Form",
+                                                                                    className: "text-lg px-4 font-bold"
+                                                                                }
+                                                                    },
+                                                                    {
+                                                                        type: "text",
+                                                                        data: {
+                                                                            text: "Form is a form dom element which is supported with all type of attributes that it usually does. All HTML attributes supported. Supports action and http methods.",
+                                                                            className: "text-sm px-4 py-1"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        type: "text",
+                                                                        data: {
+                                                                            text: "<code>type: 'form'</code> , <code>data: { method: '', action: '', items: [...] }</code>"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        type: "button",
+                                                                        data: {
+                                                                            text: "Copy <a class='px-2 fa fa-clone'></a>",
+                                                                            className: "rounded-md cursor-pointer hover:bg-teal-300 mx-4 px-4 py-2 text-sm border border-teal-300",
+                                                                            onclick: function() {
+                                                                                let component_form = {
+                                                                                    type: "dropdown",
+                                                                                    data: {
+                                                                                        action: "",
+                                                                                        method: "POST",
+                                                                                        items: [/** Nest Other Components */],
+                                                                                        style: {
+                                                                                            color: "black",
+                                                                                            backgroundColor: "transparent"                                                                                            
+                                                                                        },
+                                                                                        margin: {
+                                                                                            x: 2,
+                                                                                            y: 2
+                                                                                        },
+                                                                                        padding: 2,
+                                                                                        //className: ""
+                                                                                    }
+                                                                                };
+                                                                                copyMe(JSON.stringify(component_form));
+                                                                            }
+                                                                        }
+                                                                    }
+                                                            ]
+                                                        }
+                                                    },
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            type: "container",
+                                            data: {
+                                                className: "py-4 mt-4 lg:mt-12 md:mx-8 flex lg:flex-row flex-col",                                                
+                                                items: [
+                                                    {
+                                                        type: "card",
+                                                        data: {
+                                                            className: "lg:my-0 my-4 w-full lg:w-1/2 mx-2 lg:mx-4 text-left hover:shadow-lg",
+                                                            arrange: "column",  
+                                                            align: "start",                                         
+                                                            items: [                                               
+                                                                    {
+                                                                                type: "text",
+                                                                                data: {
+                                                                                    text: "Image",
+                                                                                    className: "text-lg px-4 font-bold"
+                                                                                }
+                                                                    },
+                                                                    {
+                                                                        type: "text",
+                                                                        data: {
+                                                                            text: "Image is a img dom element which is supported with different types of list usually it does. All HTML attributes supported.",
+                                                                            className: "text-sm px-4 py-1"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        type: "text",
+                                                                        data: {
+                                                                            text: "<code>type: 'image'</code> , <code>data: { src: ' ' }</code>"
+                                                                        }
+                                                                    },                                                                    
+                                                                    {
+                                                                        type: "button",
+                                                                        data: {
+                                                                            text: "Copy <a class='px-2 fa fa-clone'></a>",
+                                                                            className: "rounded-md cursor-pointer hover:bg-teal-300 mx-4 px-4 py-2 text-sm border border-teal-300",
+                                                                            onclick: function() {
+                                                                                let component_image = {
+                                                                                    type: "image",
+                                                                                    data: {                                                                                        
+                                                                                        src: "YOUR_IMG_PATH",
+                                                                                        alt: "ALTERNATIVE_TEXT",
+                                                                                        style: {
+                                                                                            height: 100,
+                                                                                            width: 100
+                                                                                        }
+                                                                                        //className: ""
+                                                                                    }
+                                                                                };
+                                                                                copyMe(JSON.stringify(component_image));
+                                                                            }
+                                                                        }
+                                                                    }
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        type: "card",
+                                                        data: {
+                                                            className: "w-full lg:w-1/2 mx-2 lg:mx-4 text-left hover:shadow-lg",
+                                                            arrange: "column",  
+                                                            align: "start",                                         
+                                                            items: [                                               
+                                                                    {
+                                                                                type: "text",
+                                                                                data: {
+                                                                                    text: "Card",
+                                                                                    className: "text-lg px-4 font-bold"
+                                                                                }
+                                                                    },
+                                                                    {
+                                                                        type: "text",
+                                                                        data: {
+                                                                            text: "Card is a div dom element which is supported with styles of a basic card and all type of attributes that it usually does. It behaves same as the container component. All HTML attributes supported. Supports action and http methods.",
+                                                                            className: "text-sm px-4 py-1"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        type: "text",
+                                                                        data: {
+                                                                            text: "<code>type: 'card'</code> , <code>data: { shadow: 'small', items: [...] }</code>"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        type: "button",
+                                                                        data: {
+                                                                            text: "Copy <a class='px-2 fa fa-clone'></a>",
+                                                                            className: "rounded-md cursor-pointer hover:bg-teal-300 mx-4 px-4 py-2 text-sm border border-teal-300",
+                                                                            onclick: function() {
+                                                                                let component_card = {
+                                                                                    type: "card",
+                                                                                    data: {
+                                                                                        shadow: "large",
+                                                                                        items: [ /** OTHER COMPONENTS CAN BE NESTED HERE */],
+                                                                                        margin: {
+                                                                                            x: 2,
+                                                                                            y: 2
+                                                                                        },
+                                                                                        padding: 2,
+                                                                                        //className: ""
+                                                                                    }
+                                                                                };
+                                                                                copyMe(JSON.stringify(component_card));
+                                                                            }
+                                                                        }
+                                                                    }
+                                                            ]
+                                                        }
+                                                    },
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            ...title,
+                                            data: {
+                                                ...title.data,
+                                                text: "Event Listeners",                                                                                     
+                                            }
+                                        },
+                                        {
+                                            type: "container",
+                                            data: {
+                                                className: "w-full flex flex-col items-center justify-center",
+                                                items: [
+                                                    {
+                                                        type: "text",
+                                                        data: {
+                                                            text: "All type of dom event listeners supported by HTML5 can be used with this library. You can attach the listeners using the same keyword they are meant for directly to the json tree wherever you needed. For example:",
+                                                            className: "text-sm py-4 text-center lg:w-1/3 md:w-1/2"
+                                                        }
+                                                    },
+                                                    {
+                                                        type: "text",
+                                                        data: {
+                                                            text: "<code>{ type: 'button', data: { text: 'Click Me', <span class='text-teal-500'>onclick</span>: function(e) { ... } }}</code>"
+                                                        }
+                                                    },
+                                                    {
+                                                        type: "text",
+                                                        data: {
+                                                            text: "Here all types of listeners can be included to any of the component that are supported by this library.",
+                                                            className: "lg:w-1/3 md:w-1/2 text-sm text-gray-700 text-center py-2"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            ...title,
+                                            data: {
+                                                ...title.data,
+                                                text: "State References",                                                                                     
+                                            }
+                                        },
+                                        {
+                                            type: "container",
+                                            data: {
+                                                className: "w-full flex flex-col items-center justify-center",
+                                                items: [
+                                                    {
+                                                        type: "text",
+                                                        data: {
+                                                            text: "You can reference a component in the json tree and then access its state(element instance) where you needed throughout the scope of the html page you are working.",
+                                                            className: "text-sm py-4 text-center lg:w-1/3 md:w-1/2"
+                                                        }
+                                                    },
+                                                    {
+                                                        type: "text",
+                                                        data: {
+                                                            text: "<span class='text-sm text-gray-600 font-bold py-1'>Reference a component</span><br/><code>{ type: 'input', data: { type: 'text', <span class='text-teal-500'>ref</span>='myText'}}</code><br/><span class='text-sm py-1 text-gray-600 font-bold'>Access the reference</span><br/><code>{ type: 'button', data: { text: 'Click Me', onclick: function(e) { console.log(<span class='text-teal-500'>state.myText</span>) } }}</code>",
+                                                            className: "text-center"
+                                                        }
+                                                    },
+                                                    {
+                                                        type: "text",
+                                                        data: {
+                                                            text: "Make sure that you have unique names to all your references.",
+                                                            className: "lg:w-1/3 md:w-1/2 text-sm text-gray-700 text-center py-4"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            ...title,
+                                            data: {
+                                                ...title.data,
+                                                text: "Inline Markups",                                                                                     
+                                            }
+                                        },
+                                        {
+                                            type: "container",
+                                            data: {
+                                                className: "w-full flex flex-col items-center justify-center py-2",
+                                                items: [
+                                                    {
+                                                        type: "text",
+                                                        data: {
+                                                            text: "You can also write or include html markups inside another components for making some inline html tags if you needed. Some of the components that supports it are:",
+                                                            className: "lg:w-1/3 md:w-1/2 text-sm text-center py-4"
+                                                        }
+                                                    },
+                                                    {
+                                                        type: "list",
+                                                        data: {
+                                                            listType: "unordered", 
+                                                            className: "text-sm m-0",                                                 
+                                                            items: [
+                                                                {
+                                                                    text: "Text",
+                                                                    margin: 0,
+                                                                    padding: 0
+                                                                },
+                                                                {
+                                                                    text: "Heading",
+                                                                    margin: 0,
+                                                                    padding: 0
+                                                                },
+                                                                {
+                                                                    text: "Link",
+                                                                    margin: 0,
+                                                                    padding: 0
+                                                                },
+                                                                {
+                                                                    text: "List",
+                                                                    margin: 0,
+                                                                    padding: 0
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            type: "link",
+                                            data: {
+                                                text: "Go To Top",
+                                                className: "text-center hover:text-teal-400 text-black border-black border-b border-dotted mt-4",
+                                                href: "#top"
+                                            }
+                                        },
+                                        {
+                                            type: "text",
+                                            data: {
+                                                text: "<a rel='license' href='http://creativecommons.org/licenses/by-nc-sa/4.0/'><img alt='Creative Commons License' style='border-width:0' src='https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png' /></a><br />This work is licensed under a <a rel='license' href='http://creativecommons.org/licenses/by-nc-sa/4.0/'>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.",
+                                                className: "text-gray-700 text-xs mt-4 text-center flex flex-col items-center justify-center"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },                            
+                            {
+                            type: "container",
+                            data: {
+                                arrange: "column",
+                                className: "flex items-center justify-center w-full bg-black h-48 mt-16",                                
+                                items: [
+                                    {
+                                        type: "text",
+                                        data: {
+                                            text: "HyderJS - Code licensed under <a class='hover:text-teal-400 text-white border-b border-dotted' href='/license/'>MIT License</a> - Documentaion licensed by <a class='hover:text-teal-400 text-white border-b border-dotted' href='https://creativecommons.org/licenses/by-nc-sa/4.0/'>CC 4.0</a>",
+                                            className: "text-white text-sm text-center mb-1"
+                                        }
+                                    },
+                                    {
+                                        type: "text",
+                                        data: {
+                                            text: "This website is built using <a class='hover:text-teal-400 text-white border-b border-dotted' href='https://hyderjs.tech/'>HyderJS</a> - Glad we had best CDN from <a class='hover:text-teal-400 text-white border-b border-dotted' href='https://www.jsdelivr.com/'>JSDelivr</a> for <a class='hover:text-teal-400 text-white border-b border-dotted' href='https://cdn.jsdelivr.net/gh/imprakashraghu/hyderjs/lib/hyder.min.js'>HyderJS CDN</a>",
+                                            className: "text-white text-sm py-1 text-center"
+                                        }
+                                    },
+                                    {
+                                        type: "text",
+                                        data: {
+                                            text: "<a class='hover:text-teal-400 text-white border-b border-dotted' href='https://github.com/imprakashraghu/hyderjs'>GitHub Repo</a> - <a class='hover:text-teal-400 text-white border-b border-dotted' href='https://github.com/imprakashraghu/hyderjs/issues/'>Issues</a> - <a class='hover:text-teal-400 text-white border-b border-dotted' href='/docs/v1/'>Docs</a>",
+                                            className: "text-white text-sm py-1 text-center"
+                                        }
+                                    }
+                                    ,
+                                    {
+                                        type: "text",
+                                        data: {
+                                            text: "Made with ❤️ in <span id='loc'>Puducherry</span>",
+                                            className: "text-white text-sm text-center py-2"                                            
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                            
+        ];
+         new HyderJS({           
+            bricks: blocks,
+            wall: "app"                        
+        });
+
+        window.onload = function() {            
+                randomizeLocation();            
+        }
+
+        let randomizeLocation = () => {
+            let locations = ["Pondicherry", "India", "தமிழ்நாடு"];
+            let randomLocation = locations[Math.floor(Math.random() * locations.length)];
+            document.getElementById('loc').innerText = randomLocation;
+        }
+
+    </script>
+</html>

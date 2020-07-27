@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIT License - HyderJS</title>
+    <link rel="stylesheet" href="../assets/css/tailwind.css">    
+    <link rel="icon" href="../assets/img/logo-sm.png">
+</head>
+<body>
+    <div id="app"></div>
+</body>
+    <script src="../lib/hyder.min.js"></script>
+    <script>
+        let blocks = [
+            {
+                type: "container",
+                data: {
+                    className: "w-full mt-12 flex flex-col items-center justify-center lg:px-20 px-4",
+                    items: [
+                        {
+                            type: "card",
+                            data: {
+                                className: "flex flex-col w-auto md:mx-24 lg:mx-32 items-start shadow",
+                                items: [
+                                    {
+                                        type: "text",
+                                        data: {
+                                            className: "font-bold text-xl mx-4 text-left underline lg:mx-12 my-8",
+                                            text: "The MIT License (MIT)"
+                                        }
+                                    },
+                                    {
+                                        type: "text",
+                                        data: {
+                                            className: "text-md text-left my-2 mx-4 lg:mx-12 mb-6",
+                                            text: "Copyright © 2020 Hemaprakash Raghu<br/><br/>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:<br/><br/>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.<br/><br/>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.<br/>"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            type: "text",
+                            data: {
+                                className: "my-8",
+                                text: "<a class='hover:text-teal-500 text-black border-black border-b border-dotted' href='https://hyderjs.tech/'>Go to Website</a>"
+                            }
+                        }
+                    ]
+                }
+            }
+        ];
+
+        new HyderJS({
+            bricks: blocks,
+            wall: "app"
+        });
+
+    </script>
+</html>
