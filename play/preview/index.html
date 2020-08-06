@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview & Test your websites created using HyderJS</title>
+    <link rel="stylesheet" href="../../assets/css/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="/assets/js/hyder.js"></script>
+    <link rel="icon" href="/assets/img/logo-sm.png" />    
+</head>
+<style>
+    #preview_section {
+        display: none;        
+    }
+    #cancel_preview {
+        display: none;
+    }
+</style>
+<body>
+    <div class="absolute top-0 px-8 py-4 w-full flex items-center">
+       <a href="/" ><img class="h-16 border rounded-lg bg-white shadow-md" src="/assets/img/logo-sm.png"></a>
+    </div>
+    <div id="cancel_preview" class="absolute top-0 right-0 px-8 py-4 flex items-center">
+        <button onclick="togglePreview()" class="cursor-pointer outline-none focus:outline-none px-6 py-2 my-2 text-md bg-white border border-teal-500 text-teal-500 hover:text-red-400 rounded-md">Close Preview</button>        
+    </div>
+    <div id="upload_section" class="w-full flex flex-col items-center justify-center lg:px-0 px-10" style="height: 500px;">        
+        <h1 class="text-gray-700 text-3xl lg:text-4xl font-black lg:w-1/2 text-center mt-40 lg:mt-0 lg:pt-10 mb-5">Preview & Test your website created using hyderjs library</h1>
+        <div class="lg:w-4/12 py-6 lg:px-0 px-4 rounded-md border-dashed border-2 border-teal-500 flex flex-col items-center justify-center">            
+            <input type="file" id="jsonUpload" style="display: none;" accept="application/json"/>
+            <input type="button" class="cursor-pointer outline-none focus:outline-none px-6 py-3 text-lg font-bold bg-teal-400 text-white hover:bg-teal-500 rounded-md" value="Browse" onclick="document.getElementById('jsonUpload').click();" />
+            <p class="w-full text-center text-sm mt-4 text-gray-700">Upload your blocks json file here to preview</p>
+        </div>
+    </div>    
+    <div id="preview_section" class="w-full h-full border-t mt-32 px-10">
+        <div id="app"></div>
+    </div>
+     <!-- footer -->
+     <div class="w-full flex lg:flex-row flex-col py-4 lg:mt-0 mt-4 items-center justify-center">        
+        <a href="/contribute/" class="mx-2 font-bold text-lg text-center pt-2 text-gray-700 hover:border-teal-400 border-b-4 cursor-pointer">Contribute</a>           
+        <a href="https://github.com/imprakashraghu/hyderjs" class="mx-2 font-bold text-lg text-center pt-2 text-gray-700 hover:border-teal-400 border-b-4 cursor-pointer">GitHub Repo</a>           
+        <a href="/license/" class="mx-2 font-bold text-lg text-center pt-2 text-gray-700 hover:border-teal-400 border-b-4 cursor-pointer">MIT Licensed</a>           
+    </div>
+    <!-- footer -->
+</body>
+<script>
+    document.getElementById('jsonUpload').addEventListener("change", function(e) {       
+        document.getElementById('app').className = "";
+        document.getElementById('app').innerHTML = "";
+        let jsonFile = e.target.files[0];
+        if (e.target.files[0].type === 'application/json') {
+            let fileRead = new FileReader();
+            fileRead.onload = function(e) {
+                let content = e.target.result;
+                let sectionOne = document.getElementById('upload_section');
+                let sectionTwo = document.getElementById('preview_section');
+                let sectionOneBut = document.getElementById('cancel_preview');
+                sectionOne.style.display = "none";
+                sectionOneBut.style.display = "flex";
+                sectionTwo.style.display = "block";
+                let blocks = JSON.parse(content);                
+                if(blocks.length) {
+                    new HyderJS({
+                        wall: "app",
+                        bricks: blocks
+                    });
+                } else {
+                    document.getElementById('app').className = "text-center w-full font-bold text-xl py-3";
+                    document.getElementById('app').innerHTML = 'Your json file is not valid blocks of hyderjs.<br/><a class="text-sm py-3 text-teal-500 underline" href="/docs/v1/">Visit HyderjsDocs to create one.</a>';
+                }
+            };
+            fileRead.readAsText(jsonFile);
+        } else {
+            alert('Invalid JSON file!');
+        }        
+    });
+    function togglePreview() {
+        document.getElementById('app').innerHTML = "";
+        let uploadBut = document.getElementById('upload_section');
+        let preview = document.getElementById('preview_section');
+        let cancelBut = document.getElementById('cancel_preview');
+        preview.style.display = "none";
+        cancelBut.style.display = "none";
+        uploadBut.style.display = "flex";
+    }
+</script>
+</html>

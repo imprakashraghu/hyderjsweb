@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HyderJS - Javascript Library to build UI for web using JSON</title>
     <link rel="stylesheet" href="assets/css/tailwind.css" />
-    <link rel="icon" href="assets/img/logo-sm.png" />
+    <link rel="icon" href="assets/img/logo-sm.png" />    
   </head>
   <style></style>
   <body>
@@ -67,6 +67,15 @@
                       className:
                         "hidden lg:block text-sm text-white cursor-pointer hover:text-teal-400 mx-2",
                       href: "#why",
+                    },
+                  },
+                  {
+                    type: "link",
+                    data: {
+                      text: "Playground",
+                      className:
+                        "text-sm text-white cursor-pointer hover:text-teal-400 mx-2",
+                      href: "#playground",
                     },
                   },
                   {
@@ -142,7 +151,7 @@
               data: {
                 className: "text-sm",
                 text:
-                  "Beta Version <span class='text-xs font-bold bg-black p-1 text-white rounded-md'>0.0.1</span>",
+                  "Stable Version <span class='text-xs font-bold bg-black p-1 text-white rounded-md'>1.0.0</span>",
               },
             },
           ],
@@ -381,6 +390,42 @@
       {
         type: "container",
         data: {
+          id: "playground",
+          arrange: "column",
+          className:
+            "lg:px-0 px-2 w-full flex items-center justify-center py-4 mt-8",
+          items: [
+            {
+              ...title,
+              data: {
+                ...title.data,
+                text: "Play with Hyderjs",
+              },
+            },
+            {
+              ...description,
+              data: {
+                ...description.data,
+                className: "text-center py-2",
+                text:
+                  "Rapid online development for one page website using json.<br/> Start creating your right now below!",
+              },
+            },            
+            {
+              type: "link",
+              data: {
+                text: "Go Now",
+                href: "/play",
+                className:
+                  "text-gray-600 border-b-4 hover:border-teal-400 cursor-pointer mt-3",
+              },
+            },
+          ],
+        },
+      },
+      {
+        type: "container",
+        data: {
           id: "contribute",
           arrange: "column",
           className:
@@ -436,17 +481,7 @@
                       title: "balajiR",
                       alt: "git profile image",
                     },
-                  },
-                  {
-                    type: "image",
-                    data: {
-                      src:
-                        "https://avatars.githubusercontent.com/u/53446404?s=300",
-                      className: "h-8 w-8 rounded-full mx-2",
-                      title: "younusesherif",
-                      alt: "git profile image",
-                    },
-                  },                  
+                  }                  
                 ],
               },
             },
@@ -527,7 +562,7 @@
       },
     ];
 
-    new HyderJS({
+    new HyderJS({      
       bricks: blocks,
       wall: "app",
     });

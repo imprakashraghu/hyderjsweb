@@ -1,0 +1,72 @@
+html{
+    margin: 0;
+  }           
+  .modal {
+    transition: opacity 0.25s ease;
+  }
+  body.modal-active {
+    overflow-x: hidden;
+    overflow-y: visible !important;
+  }
+  .main__bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;            
+    left: 0;
+    right: 0;
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+    z-index: -10;            
+    transition: 1s;
+    animation: moveit 1s linear infinite;
+  }
+  @media only screen and (max-width: 500px) {
+    .main__bg {
+      display: none;
+    }
+
+    .create__boom {
+      display: none;
+    }
+
+    .create__fallback {
+      display: block;
+    }
+  }
+
+  @media only screen and (max-width: 990px) {   
+    .create__boom {
+      display: none;
+    }
+
+    .create__fallback {
+      display: block;
+    }
+  }
+  @keyframes moveit {
+    0%, 100% {
+        bottom: 0;
+      }
+      50% {
+        bottom: 3px;
+      }
+}
+  .opt-btn {        
+      padding: 15px;
+      color: white;
+      background-color: black;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      outline: none;
+      margin-left: 0.3rem;
+      margin-right: 0.3rem;
+  }
+  .opt-btn:focus {
+      outline: none;
+  }
+  .opt-btn:hover {
+      background-color: rgba(0,0,0,0.8);
+  }
+
