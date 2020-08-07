@@ -19,7 +19,7 @@
         padding: 0;
         height: 100%;
         width: 100%;
-        overflow: hidden;
+        overflow: hidden;        
     }            
     #container{
         width: 100%;
@@ -58,6 +58,9 @@
     .opt-btn:hover {
         background-color: rgba(0,0,0,0.8);
     }
+    .ace_editor, .ace_editor div{
+    font-family:monospace
+}
 </style>
 <body onload="ready()">    
     <div id="container">
@@ -75,7 +78,7 @@
     function exitProject() {
         if(confirm('Are you sure want delete? Export your project before you do so!')) {
             localStorage.clear();
-            window.location.replace("/");
+            window.location.replace("/play");
         } else {}       
     }
     function toggleFullScreenPreview() {
@@ -97,12 +100,14 @@
             {
                 type: "heading",
                 data: {                
-                    text: "வணக்கம் உலகம்!<br/><span style='font-size:1rem;font-weight:400'>(Hello, World!)</span>",
+                    text: "Hello, World 🚀",
                     style: {
                         lineHeight: 1,
                         textAlign: "center", 
+                        fontWeight: 800,
+                        fontSize: '2rem',
                         margin: {
-                            y: 2
+                            y: 4
                         }                   
                     }
                 }        
