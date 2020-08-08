@@ -60,10 +60,10 @@
                 sectionOneBut.style.display = "flex";
                 sectionTwo.style.display = "block";
                 let block = JSON.parse(content);                
-                if(block.blocks.length) {
+                if(block.length) {
                     new HyderJS({
                         wall: "app",
-                        bricks: block.blocks
+                        bricks: block
                     });
                 } else {
                     document.getElementById('app').className = "text-center w-full font-bold text-xl py-3";
