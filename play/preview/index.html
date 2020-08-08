@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preview & Test your websites created using HyderJS</title>
-    <link rel="stylesheet" href="../../assets/css/tailwind.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../assets/css/tailwind.css">    
     <link rel="stylesheet" href="/assets/css/style.css">
     <script src="/assets/js/hyder.js"></script>
     <link rel="icon" href="/assets/img/logo-sm.png" />    
@@ -58,11 +59,11 @@
                 sectionOne.style.display = "none";
                 sectionOneBut.style.display = "flex";
                 sectionTwo.style.display = "block";
-                let blocks = JSON.parse(content);                
-                if(blocks.length) {
+                let block = JSON.parse(content);                
+                if(block.blocks.length) {
                     new HyderJS({
                         wall: "app",
-                        bricks: blocks
+                        bricks: block.blocks
                     });
                 } else {
                     document.getElementById('app').className = "text-center w-full font-bold text-xl py-3";

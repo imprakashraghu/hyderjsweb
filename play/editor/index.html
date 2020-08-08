@@ -28,7 +28,12 @@
     }
     #app {
         height: 100%;
-        width: 40%;        
+        width: 40%;  
+        overflow-x: hidden;      
+        overflow-y: overlay;
+    }
+    #app::-webkit-scrollbar {
+        display: none;
     }
     #editor {
         height: 100%;
@@ -200,8 +205,9 @@
     function buildFolder() {
         let config = JSON.parse(localStorage.getItem('config'));
         let zip = new JSZip();
-        zip.file("index.html", buildHTMLFile(config));
-        zip.folder("hyderjs-project").file("blocks.json", js_beautify(localStorage.getItem("user-hyderjs-session-fuel"), {indent_size: 2}));
+        zip.file("index.html", buildHTMLFile(config));                
+        zip.folder("hyderjs-project").file("blocks.json", js_beautify(localStorage.getItem("user-hyderjs-session-fuel"), {indent_size: 2}))
+        .file("config.json", js_beautify(localStorage.getItem("config"), {indent_size: 2}));
         zip.generateAsync({type:"blob"})
         .then(function(content) {
             saveAs(content, `${config.name}-${new Date().getTime()}.zip`);
