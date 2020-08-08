@@ -227,6 +227,15 @@
             cssFrames.type = "text/css"; cssFrames.rel = "stylesheet";
             headTag.append(cssFrames); 
         }        
+        let metaTag = document.createElement('meta');
+        metaTag.name = "viewport";
+        metaTag.content = "width=device-width, initial-scale=1.0";
+        let fontAwesome = document.createElement('link');
+        fontAwesome.type = "text/css";
+        fontAwesome.href = "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+        fontAwesome.rel = "stylesheet";
+        headTag.append(fontAwesome);
+        headTag.append(metaTag);
         headTag.append(title); 
         let html = document.createElement('html');    
         html.append(headTag);
